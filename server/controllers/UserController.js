@@ -33,6 +33,21 @@ const UserController = {
                 console.log( err );
                 response.redirect( '/users/gohome' );
             })
+    },
+    quoteshome : function(req, response){
+        UserModel
+            .getQuotes()
+            .then( result => {
+                if( result === null ){
+                    throw new Error( "Result: None" );
+                }
+                console.log("All quotes added: "+ result);
+                response.render( 'quotesall', { found: true, user: result } );
+                console.log("QQQQQQQQ "+ user);
+            })
+            .catch( err => {
+                response.render( 'quotesall', { found: false } );
+            })
     }
 
 }

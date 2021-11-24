@@ -1,6 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-const mongoose = require( 'mongoose' );
+//const mongoose = require( 'mongoose' );
 var app = express();
 
 app.use(express.json()) //en el curriculum nos enseñan esta
@@ -11,7 +11,7 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
 //-----------------
-mongoose.connect('mongodb://localhost/users_db', {useNewUrlParser: true});
+//mongoose.connect('mongodb://localhost/users_db', {useNewUrlParser: true});
 
 const {UserModel} = require( './server/models/UsersModel' );
 const { UserRouter } = require("./server/routes/UserRouter");
