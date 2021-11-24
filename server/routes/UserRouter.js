@@ -6,7 +6,6 @@ UserRouter
     .get("/gohome", UserController.gohome);
 UserRouter
     .post( '/quotes', UserController.addquote );
-
 UserRouter
     .get( '/quotes', UserController.quoteshome );
 
