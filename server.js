@@ -17,6 +17,7 @@ const {UserModel} = require( './server/models/UsersModel' );
 const { UserRouter } = require("./server/routes/UserRouter");
 
 app.use('/users', UserRouter);
+require('./server/config/database');
 //------------------
 /*
 
