@@ -13,12 +13,12 @@ app.set("view engine", "ejs");
 //-----------------
 mongoose.connect('mongodb://localhost/users_db', {useNewUrlParser: true});
 
-const {UserModel} = require( './models/UsersModel' );
-//------------------
+const {UserModel} = require( './server/models/UsersModel' );
+const { UserRouter } = require("./server/routes/UserRouter");
 
-app.get("/", function(req, response){
-    response.render( 'home');
-});
+app.use('/users', UserRouter);
+//------------------
+/*
 
 app.post( '/quotes', function( request, response ){
     console.log( request.body );
@@ -65,7 +65,7 @@ app.get("/quotes", function(req, response){
             response.render( 'quotesall', { found: false } );
         })
 });
-
+*/
 app.listen( 8080, function(){
     console.log( "The users server is running in port 8080." );
 });
